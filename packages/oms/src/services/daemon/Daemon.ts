@@ -131,7 +131,7 @@ export default class Daemon {
     const { containerState } = this
 
     if (!containerState) {
-      throw new Error(`Failed to getContainerPort#${sourcePort} while the container is not running`)
+      throw new Error(`The container is not yet running. Please wait for the container to be ready`)
     }
     const mappedPort = containerState.portsMap.get(sourcePort)
     if (!mappedPort) {
